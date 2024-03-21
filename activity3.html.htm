@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+          
+        body {
+            background-color:#e56ce9c7;
+            font-family: 'Inconsolata', monospace;
+            text-align: center;
+        }
+        
+        main{
+       text-align:center;       
+       margin-top: 130px;
+       font-size: 25px;
+   }
+   
+   header{
+       text-align:center;
+       font-size: 30px;
+   }
+   
+   
+    .jdn{
+          display:inline-block;
+          background:transparent;
+          position:relative;
+          border:none;
+          padding: 1em 1.5em;
+          color: #000000;
+          transition: .5s ease;
+          text-transform: uppercase;         
+        }
+        
+        .jdn::before{
+          content: "";
+          position: absolute;
+          left:0;
+          bottom:0;
+          height:2px;
+          width:0;
+          background-color:#4f4f4f;
+          transition: .5s ease;
+        }
+
+        .jdn:hover{
+            background-color:#4f4f4f;
+            color: white;
+            transition-delay: .7s;
+        }
+        
+        .jdn:hover::before{
+            width:100%;
+        }
+        
+        .jdn::after{
+          content: "";
+          position: absolute;
+          left:0;
+          bottom:0;
+          height:0;
+          width:100%;
+          color:white;
+          background-color:#4f4f4f;
+          transition: .4s ease;
+        }
+
+        .jdn:hover::after{
+            height:100%
+            transition 0.4s;
+            color: aliceblue;
+        }
+        
+        a{
+            text-decoration: none;
+            color: rgb(136, 28, 112);
+            display:inline-block;
+            margin-left:120px;
+            padding-right:70px;         
+        }
+        
+        ul{
+            background-color:#5ad8eed0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="font-family: 'Courier New', Courier, monospace;">ACTIVITY #3</h2>
+    </header>
+    <ul>
+       
+        <a href="activity3.html.htm"><span class="jdn">Grading Calculator</span></a>
+        </ul>
+    <main>
+    <script type="text/javascript">
+        
+        var a
+        var b
+        var c
+        var d
+        var ave
+        var g
+        var m
+
+        
+     a = prompt ("Please enter your grade in the first quarter",0)
+       
+     b = prompt ("Please enter your grade in the second quarter",0)
+     
+     c = prompt ("Please enter your grade in the third quarter",0)
+     
+     d = prompt ("Please enter your grade in the fourth quarter",0)
+     
+    ave = (parseFloat(a) + parseFloat(b) + parseFloat(c) + parseFloat(d)) / 4
+        
+        if (ave >= 95)
+        {
+            g = "A"
+        }
+        if (ave >= 90 && ave < 95)
+        {
+            g = "A-"
+        }            
+        if (ave >= 85 && ave < 90)
+        {
+             g = "B+"
+        }          
+        if (ave >= 80 && ave < 85)
+        {
+             g = "B-"
+        }           
+        if (ave >= 75 && ave < 80)
+        {
+             g = "C+"
+        }      
+        if (ave < 75)
+        {
+             g = "C"
+        }
+        
+        switch (g)
+        {
+        case "A":
+              m = "EXCELLENT"
+              break
+        case "A-":
+              m = "VERY GOOD"  
+              break
+        case "B+": 
+              m = "GOOD" 
+              break
+        case "B-": 
+              m = "SATISFACTORY"
+              break
+        case "C+": 
+              m = "PASSED"     
+              break
+        case "C": 
+              m = "FAILED"
+              break      
+        default:
+              m = "FAIL"           
+        }
+        
+        document.write("<p>",m,"</p>")
+        document.write("Your first quarter grade is ",a)
+        document.write("<br>Your second quarter grade is ",b)
+        document.write("<br>Your third quarter grade is ",c)
+        document.write("<br>Your fourth quarter grade is ",d)
+        document.write("<br>Your <b>ave</b> is ",ave)  
+        document.write("<br>Your <b>letter grade</b> is ",g) 
+           
+    </script>
+    </main>
+</body>
+</html>
